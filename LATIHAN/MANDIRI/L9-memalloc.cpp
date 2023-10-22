@@ -1,5 +1,5 @@
 #include <iostream>
-#include <cstdlib>  //cstdlib is used to use malloc function.
+//#include <cstdlib>  //cstdlib is used to use malloc function.
 using namespace std;
 /* EXAMPLE 1
 int main()
@@ -26,7 +26,7 @@ int main()
 }
 */
 
-// EXAMPLE 2
+/* EXAMPLE 2
 int main()
 {
     // variable declaration.
@@ -53,5 +53,30 @@ int main()
     }
 
     free(ptr);
+    return 0;
+}
+*/
+
+// EXAMPLE 3
+int main()
+{
+    // Dynamic memory allocation for integer using new function.
+    int* dynamicInt = new int;
+    
+    if (dynamicInt)
+    {
+        // Assign value to integer that has been allocated previously.
+        *dynamicInt = 42;
+        
+        // Menggunakan nilai yang dialokasikan
+        cout << "Nilai yang dialokasikan: " << *dynamicInt << endl;
+        
+        // Free memory allocation.
+        delete dynamicInt;
+    } else
+    {
+        cout << "Alokasi memori gagal!" << endl;
+    }
+
     return 0;
 }
