@@ -16,7 +16,8 @@ L6 - References & Memory Address            https://www.w3schools.com/cpp/cpp_re
 L7 - Pointers                               https://www.w3schools.com/cpp/cpp_pointers.asp
 L8 - Complex Pointers                       
 L9 - Dynamic Memory Allocations             https://www.geeksforgeeks.org/cpp-malloc/
-L10 - Single Linked List                    https://www.geeksforgeeks.org/what-is-linked-list/
+L10 - Linked List Fundamental               https://www.geeksforgeeks.org/what-is-linked-list/
+L10 - Single Linked List                    https://youtu.be/VVemCxif9vg?si=vl33ElvcoyllJLo3
 L11 - Double Linked List
 L12 - Circular Linked List
 L13 - Double Circular Linked List
