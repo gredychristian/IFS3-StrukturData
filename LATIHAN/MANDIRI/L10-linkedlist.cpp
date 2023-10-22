@@ -2,29 +2,40 @@
 #include <cstdlib>
 using namespace std;
 
-struct node
+// Declaration struct and the component.
+struct Node
 {
     int data;
-    node *link;
+    Node *next;
 };
-typedef node* nodePtr;
+Node *head, *tail, *cur;
+
+void addList(int data)
+{
+    head = new Node();
+    head -> data = data;
+    head -> next = NULL;
+    tail = head;
+}
+
+void printList()
+{
+    cur = head;
+
+    while( cur != NULL)
+    {
+        cout << cur -> data << " -> ";
+
+        cur = cur -> next;
+    }
+    cout << "NULL";
+}
 
 int main()
 {
-    nodePtr head = NULL; // Inisialisasi head dengan NULL
-    
-    nodePtr headnode = new node; // Deklarasi dan alokasi memori untuk headnode
-    headnode->data = 20;
-    headnode->link = NULL;
-    
-    // Set head untuk menunjuk ke headnode
-    head = headnode;
-    
-    // Lakukan apa yang diperlukan dengan linked list
-    // ...
-    
-    // Jangan lupa untuk membebaskan memori jika tidak diperlukan lagi
-    delete head;
-    
+    system("cls");
+    addList(20);
+    printList();
+
     return 0;
 }
