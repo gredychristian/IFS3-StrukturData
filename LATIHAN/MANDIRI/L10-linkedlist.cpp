@@ -8,19 +8,31 @@ struct Node
     int data;
     Node *next;
 };
-Node *head, *tail, *cur;
 
-void addList(int data)
+int main()
 {
-    head = new Node();
-    head -> data = data;
-    head -> next = NULL;
-    tail = head;
-}
+    system("cls");
+    Node *node1, *node2, *node3;
 
-void printList()
-{
-    cur = head;
+    node1 = new Node();
+    node2 = new Node();
+    node3 = new Node();
+
+    // Assign node1
+    node1 -> data = 10;
+    node1 -> next = node2;
+
+    // Assign node2
+    node2 -> data = 20;
+    node2 -> next = node3;
+
+    // Assign node3
+    node3 -> data = 30;
+    node3 -> next = NULL;
+
+    // Print linked list
+    Node *cur;
+    cur = node1;
 
     while( cur != NULL)
     {
@@ -29,13 +41,6 @@ void printList()
         cur = cur -> next;
     }
     cout << "NULL";
-}
-
-int main()
-{
-    system("cls");
-    addList(20);
-    printList();
-
+    
     return 0;
 }
