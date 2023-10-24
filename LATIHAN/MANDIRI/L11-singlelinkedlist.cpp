@@ -14,7 +14,7 @@ Node *head, *tail, *cur, *temp, *del;
 void addList(int data)
 {
     head = new Node();
-    head -> data = data;
+    head -> data = data; // Head -> data = data means that the value of data is based on how value is assigned in parameters [check at int main()].
     head -> next = NULL;
     tail = head;
 }
@@ -38,6 +38,10 @@ void addRear(int data)
     tail = temp;
 }
 
+// Add new node after the given value.
+void addMid(int data)
+{}
+
 // Remove front node.
 void delFront()
 {
@@ -45,6 +49,10 @@ void delFront()
     head = head -> next;
     delete del;
 }
+
+// Remove node after the given value.
+void delMid(int data)
+{}
 
 // Remove rear node.
 void delRear()
@@ -76,38 +84,77 @@ void printList()
 // Main function.
 int main()
 {
-    system("cls");
-    cout << "<<< FRONT - REAR >>>" << endl << endl;
-    
-    // Add new first list
-    addList(20);
-    printList();
-    cout << "NULL" << endl << endl;
+    head = NULL;// Initialize head with NULL to prevent any uneccessary data appear in the linked list.
+    string i;
+    int data;
+    int pil;
+    int exit = 0;
 
-    // Add front list
-    addFront(40);
-    printList();
-    cout << "NULL" << endl << endl;
+    while (!exit)
+    {
+        system("cls");
+        cout << "|============================|" << endl;
+        cout << "|     SINGLE LINKED LIST     |" << endl;
+        cout << "|============================|" << endl;
+        
+        cout << "1. Tambah data di depan\n3. Tambah data di akhir\n";
+        cout << "4. Hapus data di depan\n6. Hapus data di akhir\n";
+        cout << "7. Cetak list\n8. Keluar\n";
+        cout << "Pilihan menu = ";
+        cin >> pil;
 
-    //Add rear list
-    addRear(50);
-    printList();
-    cout << "NULL" << endl << endl;
+        switch(pil)
+        {
+            case 99999:// Add new node
+            cout << "\nMasukkan nilai: ";
+            cin >> data;
+            addList(data);
+            break;
 
-    // Delete front list
-    delFront();
-    printList();
-    cout << "NULL" << endl << endl;
+            case 1:// Add new node to the front
+            cout << "\nMasukkan nilai: ";
+            cin >> data;
+            addFront(data);
+            break;
 
-    // Add rear list
-    addRear(60);
-    printList();
-    cout << "NULL" << endl << endl;
+            case 2:// Add new node to the middle
+            cout << "\nMasukkan nilai: ";
+            cin >> data;
+            addMid(data);
+            break;
+            
+            case 3:// Add new node to the rear
+            cout << "\nMasukkan nilai: ";
+            cin >> data;
+            addRear(data);
+            break;
 
-    // Delete rear list
-    delRear();
-    printList();
-    cout << "NULL" << endl << endl;
+            case 4:// Delete front node
+            delFront();
+            break;
+
+            case 5:// Delete middle node
+            delMid(data);
+            break;
+
+            case 6:// Delete rear node
+            delRear();
+            break;
+
+            case 7:// Print single linked list
+            printList();
+            cout << "NULL" << endl << endl;
+            cout << "[Tekan 'x' Untuk Lanjut] ";
+            cin >> i;
+            break;
+
+            case 8:
+            exit = 1;
+            break;
+
+            default:;
+        }
+    }
 
     return 0;
 }
